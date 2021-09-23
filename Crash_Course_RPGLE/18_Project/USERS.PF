@@ -1,0 +1,9 @@
+                                            UNIQUE
+                R USRFMT
+                  UID            5P 0
+                  UNAME         20A
+                  UPWD          10A
+                  UROLE         10A
+                  UCRTTS          Z
+                  UUPDTS          Z
+                K UID

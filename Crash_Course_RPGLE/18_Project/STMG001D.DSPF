@@ -1,0 +1,200 @@
+     A*%%TS  SD  20210923  214936  SSW         REL-V7R4M0  5770-WDS
+     A*%%EC
+     A                                      DSPSIZ(24 80 *DS3)
+     A          R S01FMT
+     A*%%TS  SD  20210920  234250  SSW         REL-V7R4M0  5770-WDS
+     A                                      CA03(03 'Exit')
+     A                                      CA05(05 'Refresh')
+     A                                  1  3DATE
+     A                                      EDTCDE(Y)
+     A                                  2  3TIME
+     A                                  2 68USER
+     A                                  2 29'Student Mangement System'
+     A                                      DSPATR(HI)
+     A                                      DSPATR(RI)
+     A                                      COLOR(PNK)
+     A                                  8 13'Enter your login option'
+     A                                 10 19'1. Admin Login'
+     A                                 12 19'2. Student Login'
+     A                                 15 15'Option'
+     A            INPOPT         1S 0I 15 24
+     A                                 21  7'F3 = Exit'
+     A                                 21 27'F5 = Refresh'
+     A            EMSG01        40   O 17  7
+     A          R S02FMT
+     A*%%TS  SD  20210921  190746  SSW         REL-V7R4M0  5770-WDS
+     A                                      CA03(03 'Exit')
+     A                                      CA05(05 'Refresh')
+     A                                      CA12(12 'Back')
+     A                                  9 17'User ID......'
+     A                                 11 17'Pasword......'
+     A            USRID          5S 0I  9 32
+     A            PWD           10A  I 11 32DSPATR(ND)
+     A                                      CHECK(LC)
+     A                                  3 23'Admin Login'
+     A                                  1 65DATE
+     A                                      EDTCDE(Y)
+     A                                  2 65TIME
+     A                                  3 65USER
+     A            EMSG02        40A  O 15 17
+     A                                 19 12'F3=Exit'
+     A                                 19 28'F5=Refresh'
+     A                                 19 48'F12=Back'
+     A          R S03FMT
+     A*%%TS  SD  20210922  222505  SSW         REL-V7R4M0  5770-WDS
+     A                                      CA03(03 'Exit')
+     A                                      CA05(05 'Refresh')
+     A                                      CA12(12 'Back')
+     A                                  9 17'User ID......'
+     A                                 11 17'Pasword......'
+     A            USRID          5S 0I  9 32
+     A            PWD           10A  I 11 32DSPATR(ND)
+     A                                      CHECK(LC)
+     A                                  1 65DATE
+     A                                      EDTCDE(Y)
+     A                                  2 65TIME
+     A                                  3 65USER
+     A            EMSG03        40A  O 15 17
+     A                                 19 12'F3=Exit'
+     A                                 19 28'F5=Refresh'
+     A                                 19 48'F12=Back'
+     A                                  3 22'Student Login'
+     A          R S04FMT
+     A*%%TS  SD  20210923  180501  SSW         REL-V7R4M0  5770-WDS
+     A                                      CA03(03 'Exit')
+     A                                      CA05(05 'Refresh')
+     A                                      CA12(12 'Back')
+     A                                  3 26'Student Admin Menu'
+     A                                  2 64DATE
+     A                                      EDTCDE(Y)
+     A                                  3 64TIME
+     A                                  4 64USER
+     A                                  6 12'Welcome'
+     A            ADMNAME       20A  O  6 24
+     A                                  9 21'Choose Option:'
+     A                                 11 25'1. View All Students'
+     A                                 12 25'2. Edit/Delete particular student'
+     A                                 13 25'3. Add New Student'
+     A                                 16 16'Enter your option:'
+     A            ADMOPT         1S 0I 16 38
+     A                                 20 11'F3=Exit'
+     A                                 20 27'F5=Refresh'
+     A                                 20 49'F12=Back'
+     A            EMSG04        40   O 18 23
+     A          R S05FMT
+     A*%%TS  SD  20210923  214936  SSW         REL-V7R4M0  5770-WDS
+     A                                      CA03(03 'Exit')
+     A                                      CA05(05 'Refresh')
+     A                                      CA12(12 'Back')
+     A                                  3 29'Student Menu'
+     A                                  2 61DATE
+     A                                      EDTCDE(Y)
+     A                                  3 61TIME
+     A                                  4 61USER
+     A                                  6 16'Welcome'
+     A            STUDNAME      20A  O  6 26
+     A                                  9 24'Choose Option:'
+     A                                 11 26'1. View My Profile'
+     A                                 12 26'2. Edit My Profile'
+     A                                 14 18'Enter your option:'
+     A            STUOPT         1S 0I 14 40
+     A                                 20 10'F3=Exit'
+     A                                 20 26'F5=Refresh'
+     A                                 20 47'F12=Back'
+     A            EMSG05        40   O 16 14
+     A          R SDATA                     SFL
+     A*%%TS  SD  20210923  173817  SSW         REL-V7R4M0  5770-WDS
+     A            SID       R        O  9  2REFFLD(STUDFMT/SID SSW1/STUDENTS)
+     A            SNAME     R        O  9  9REFFLD(STUDFMT/SNAME SSW1/STUDENTS)
+     A            SDEPT     R        O  9 30REFFLD(STUDFMT/SDEPT SSW1/STUDENTS)
+     A            SEMAIL    R        O  9 37REFFLD(STUDFMT/SEMAIL SSW1/STUDENTS)
+     A            SPHONE    R        O  9 69REFFLD(STUDFMT/SPHONE SSW1/STUDENTS)
+     A          R SCTL                      SFLCTL(SDATA)
+     A*%%TS  SD  20210923  173817  SSW         REL-V7R4M0  5770-WDS
+     A                                      CA03(03 'Exit')
+     A                                      CA12(12 'Back')
+     A  50                                  SFLDSP
+     A  50                                  SFLDSPCTL
+     A N50                                  SFLCLR
+     A  50                                  SFLEND(*MORE)
+     A                                      SFLSIZ(0100)
+     A                                      SFLPAG(0005)
+     A                                  3 35'All Students'
+     A                                  2 59'F3=Exit'
+     A                                  3 59'F12=Back'
+     A                                  7  3'SID'
+     A                                  7 11'Name'
+     A                                  7 32'Dept'
+     A                                  7 45'Email'
+     A                                  7 71'Phone'
+     A          R S06FMT
+     A*%%TS  SD  20210923  205923  SSW         REL-V7R4M0  5770-WDS
+     A                                      CA03(03 'Exit')
+     A                                      CF04(04 'Save')
+     A                                      CA05(05 'Refresh')
+     A                                      CA12(12 'Back')
+     A                                  2 23'View/Edit Student Information'
+     A                                  4  9'Enter Student No:'
+     A            INPSTUDNO      5S 0I  4 28
+     A                                  7 11'Student ID.....'
+     A                                  8 11'Student Name...'
+     A                                  9 11'Student Dept...'
+     A                                 10 11'Address........'
+     A                                 11 11'Email..........'
+     A                                 12 11'Mobile.........'
+     A            SID1           5S 0O  7 28
+     A            SNAME1        20A  B  8 28
+     A            SDPT1          5A  B  9 28
+     A            SADDR1        50A  B 10 28
+     A            SPHONE1       10S 0B 12 28
+     A            SEMAIL1       30A  B 11 28
+     A            EMSG06        40A  O 16 14
+     A                                 20  8'F3=Exit'
+     A                                 20 21'F4=Save'
+     A                                 20 35'F5=Refresh'
+     A                                 20 52'F12=Back'
+     A          R SADDFMT
+     A*%%TS  SD  20210923  212505  SSW         REL-V7R4M0  5770-WDS
+     A                                      CA03(03 'Exit')
+     A                                      CA05(05 'Clear')
+     A                                      CF06(06 'Add')
+     A                                      CA12(12 'Back')
+     A                                  2 33'Add New Student'
+     A                                  4 56'*'
+     A                                  4 59'Is Mandatory'
+     A                                  6  8'*'
+     A                                  6 11'Stud Name....'
+     A                                  7  8'*'
+     A                                  7 11'Stud Dept....'
+     A                                  8 11'Stud Address.'
+     A                                  9 11'Stud Email...'
+     A                                 10 11'Stud Phone...'
+     A            NSNAME        20   B  6 26
+     A            NSDPT          5   B  7 26
+     A            NSADDR        50   B  8 26
+     A            NSEMAIL       30   B  9 26
+     A            NSPHONE       10  0B 10 26
+     A            EMSGADD       50   O 14 14
+     A                                 20 10'F3=Exit'
+     A                                 20 24'F5=Clear'
+     A                                 20 41'F6=Add'
+     A                                 20 56'F12=Back'
+     A          R S07FMT
+     A*%%TS  SD  20210923  214936  SSW         REL-V7R4M0  5770-WDS
+     A                                      CA03(03 'Exit')
+     A                                      CA12(12 'Back')
+     A                                  2 31'View Student Details'
+     A                                  4  8'Welcome'
+     A            SNAME     R        O  4 17REFFLD(STUDFMT/SNAME SSW1/STUDENTS)
+     A                                  6  8'Student ID.....'
+     A            SID       R        O  6 25REFFLD(STUDFMT/SID SSW1/STUDENTS)
+     A                                  8  8'Student Dept...'
+     A            SDEPT     R        O  8 25REFFLD(STUDFMT/SDEPT SSW1/STUDENTS)
+     A                                 10  8'Student Addr...'
+     A            SADDR     R        O 10 25REFFLD(STUDFMT/SADDR SSW1/STUDENTS)
+     A                                 12  8'Student Email..'
+     A            SEMAIL    R        O 12 25REFFLD(STUDFMT/SEMAIL SSW1/STUDENTS)
+     A                                 14  8'Contact Number..'
+     A            SPHONE    R        O 14 25REFFLD(STUDFMT/SPHONE SSW1/STUDENTS)
+     A                                 19  8'F3=Exit'
+     A                                 19 26'F12=Back'

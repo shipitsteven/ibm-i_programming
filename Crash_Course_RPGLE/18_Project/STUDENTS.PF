@@ -1,0 +1,11 @@
+                                            UNIQUE
+                R STUDFMT
+                  SID            5S 0
+                  SNAME         20A
+                  SDEPT          5A
+                  SADDR         50A
+                  SEMAIL        30A
+                  SPHONE        10S
+                  SCRTTS          Z
+                  SUDPTS          Z
+                K SID
