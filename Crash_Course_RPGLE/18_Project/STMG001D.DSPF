@@ -146,7 +146,7 @@
      A            SNAME1        20A  B  8 28
      A            SDPT1          5A  B  9 28
      A            SADDR1        50A  B 10 28
-     A            SPHONE1       10S 0B 12 28
+     A            SPHONE1       10Y 0B 12 28
      A            SEMAIL1       30A  B 11 28
      A            EMSG06        40A  O 16 14
      A                                 20  8'F3=Exit'
@@ -169,10 +169,10 @@
      A                                  8 11'Stud Address.'
      A                                  9 11'Stud Email...'
      A                                 10 11'Stud Phone...'
-     A            NSNAME        20   B  6 26
-     A            NSDPT          5   B  7 26
-     A            NSADDR        50   B  8 26
-     A            NSEMAIL       30   B  9 26
+     A            NSNAME        20   B  6 26CHECK(ME LC)
+     A            NSDPT          5   B  7 26CHECK(ME)
+     A            NSADDR        50   B  8 26CHECK(LC)
+     A            NSEMAIL       30   B  9 26CHECK(LC)
      A            NSPHONE       10  0B 10 26
      A            EMSGADD       50   O 14 14
      A                                 20 10'F3=Exit'
@@ -198,3 +198,30 @@
      A            SPHONE    R        O 14 25REFFLD(STUDFMT/SPHONE SSW1/STUDENTS)
      A                                 19  8'F3=Exit'
      A                                 19 26'F12=Back'
+     A          R SEDITFMT                  CA03(03 'Exit')
+     A                                      CA05(05 'Refresh')
+     A                                      CF06(06 'Save')
+     A                                      CA12(12 'Back')
+     A                                  2 32'Edit Student'
+     A                                  6 11'Stud Name....'
+     A                                  7 11'Stud Dept....'
+     A                                  8 11'Stud Address.'
+     A                                  9 11'Stud Email...'
+     A                                 10 11'Stud Phone...'
+     A            UPSNAME       20   B  6 26CHECK(LC)
+     A            UPDEPT         5   B  7 26
+     A            UPADDR        50   B  8 26CHECK(LC)
+     A            UPEMAIL       30   B  9 26CHECK(LC)
+     A            UPPHONE       10Y 0B 10 26
+     A            EMSGEDIT      50     14 14
+     A                                 20 11'F3=Exit'
+     A                                 20 27'F5=Refresh'
+     A                                 20 45'F6=Save'
+     A                                 20 60'F12=Back'
+     A                                  4 11'Student ID...'
+     A            SIDEDIT        5S 0O  4 26
+     A*%%RS+<record-sequences>
+     A*%%RS+ <sequence name="SEDITFMT">
+     A*%%RS+  <device type="display" width="80" height="24" />
+     A*%%RS+ </sequence>
+     A*%%RS </record-sequences>
