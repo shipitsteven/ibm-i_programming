@@ -375,7 +375,7 @@
            ElseIf (*In05 = *On);
              EMSGEDIT = 'Page refreshed';
              Exsr $ClearEditScreen;
-q            Exsr $LoadStudentInfo;
+             Exsr $LoadStudentInfo;
            EndIf;
          EndDo;
 
